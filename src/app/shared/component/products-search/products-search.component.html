@@ -1,0 +1,20 @@
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <label for="searchProduct">Search Products</label>
+            <input [formControl]="productsSearchCon" placeholder="Type Here..." type="text" class="form-control">
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col-md-4 mb-4" *ngFor="let product of productsArr">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="mb-0">{{product.title}}</h2>
+                </div>
+                <div class="card-body">
+                    <img [src]="product.images[0]" class="img-fluid" [alt]="product.title" [title]="product.title">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

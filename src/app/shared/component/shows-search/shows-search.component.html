@@ -1,0 +1,26 @@
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <label for="searchShows">Search Shows</label>
+            <input [formControl]="searchcontrol" type="text" class="form-control" placeholder="Type Here...">
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col-md-4 mb-4" *ngFor="let show of showsArr">
+            <div class="card">
+                <div class="card-header">
+                    <h2>{{show.show.name}}</h2>
+                </div>
+                <div class="card-body">
+                    <img
+                      *ngIf="show.show.image?.original"
+                      [src]="show.show.image?.original"
+                      class="img-fluid"
+                      [alt]="show.show.name"
+                      [title]="show.show.name"
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
